@@ -7,5 +7,6 @@
   <i *ngIf="ticket.major == 'GE'" class="fas fa-fish"></i>
   <i *ngIf="ticket.major == 'GB'" class="fas fa-kiwi-bird"></i>
   {{ticket.major}}
-  <button (click)="deleteTicket()">Delete</button>
+  <button (click)="ArchiveTicket()">Archive</button>
+  <!--Could add *ngIf above to disable button "Archive" if already archived -->
 </div>
