@@ -30,4 +30,11 @@ export class TicketService {
     //Comment to see if anything change ;) 
     this.tickets$.next(this.ticketList);
   }
+
+  deleteTicket(ticket: Ticket)
+  {
+    const index = this.ticketList.indexOf(ticket);
+    this.ticketList.splice(index, 1);
+    this.tickets$.next(this.ticketList);
+  }
 }
