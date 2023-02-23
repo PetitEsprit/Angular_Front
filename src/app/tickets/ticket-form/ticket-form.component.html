@@ -10,6 +10,15 @@
     <input class="input-custom" type="text" id="description" [formControlName]="'description'">
   </label>
   <br>
+  <label for="StudentID">
+    StudentID<br>
+    <select class="input-custom" type="text" id="studentID" [formControlName]="'studentID'">
+      <option *ngFor="let currStud of STUDENT_LIST" [value]="currStud.id">
+        {{currStud.id}}
+      </option>
+    </select>
+  </label>
+  <br>
   <label for="Major">
     Major <br>
     <select class="input-custom" type="text" id="major" [formControlName]="'major'">

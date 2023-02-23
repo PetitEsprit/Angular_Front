@@ -2,11 +2,14 @@
   <!-- we use the {{ }} syntax to display the data, more info: https://angular.io/guide/displaying-data-->
   <h3>Titre:{{ticket.title}}</h3>
   <i class="fas fa-calendar-alt"></i> {{ticket.date | date: 'shortTime'}} &nbsp;&nbsp;
-  <i class="far fa-user"></i> {{ticket.student}}
+  <i class="far fa-user"></i> {{ticket.student.id}} - {{ticket.student.surname}} {{ticket.student.name}}
   <i *ngIf="ticket.major == 'SI'" class="fas fa-hippo"></i>
   <i *ngIf="ticket.major == 'GE'" class="fas fa-fish"></i>
   <i *ngIf="ticket.major == 'GB'" class="fas fa-kiwi-bird"></i>
   {{ticket.major}}
-  <button (click)="ArchiveTicket()">Archive</button>
+  <p>{{ticket.description}}</p>
+  <button *ngIf="ticket.archived == false" (click)="ArchiveTicket()">
+    Archive
+  </button>
   <!--Could add *ngIf above to disable button "Archive" if already archived -->
 </div>
